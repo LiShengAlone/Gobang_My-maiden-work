@@ -1,14 +1,14 @@
 /******************************************
-ÎÄ¼şÃû³Æ£ºmain.cpp
-ÎÄ¼şÃèÊö£ºÊµÏÖÍ¼ĞÎ½çÃæÎå×ÓÆåÓÎÏ·
-±àÒë»·¾³£ºVS2008-VS2017     VC6.0
-×îºóĞŞ¸Ä£º
-<2018Äê1ÔÂ13ÈÕ>  <´´½¨¹¤³Ì>  <Áõ¶Ø»Ô>
+æ–‡ä»¶åç§°ï¼šmain.cpp
+æ–‡ä»¶æè¿°ï¼šå®ç°å›¾å½¢ç•Œé¢äº”å­æ£‹æ¸¸æˆ
+ç¼–è¯‘ç¯å¢ƒï¼šVS2008-VS2017     VC6.0
+æœ€åä¿®æ”¹ï¼š
+<2018å¹´1æœˆ13æ—¥>  <åˆ›å»ºå·¥ç¨‹>  
 ******************************************/
 
 #include"gomoku.h"
 #include<stdio.h>
-//========================Ö÷º¯Êı===========================
+//========================ä¸»å‡½æ•°===========================
 int main()
 {
 	initgraph(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -36,16 +36,16 @@ int main()
 		{
 			settextcolor(hong);
 			LOGFONT q;
-			gettextstyle(&q);						 // »ñÈ¡µ±Ç°×ÖÌåÉèÖÃ
-			q.lfHeight = 64;						 // ÉèÖÃ×ÖÌå¸ß¶ÈÎª 24
-			_tcscpy_s(q.lfFaceName, _T("ºÚÌå"));	// ÉèÖÃ×ÖÌåÎª¡°²İÊé¡±(¸ß°æ±¾ VC ÍÆ¼öÊ¹ÓÃ _tcscpy_s º¯Êı)
-			q.lfQuality = ANTIALIASED_QUALITY;		// ÉèÖÃÊä³öĞ§¹ûÎª¿¹¾â³İ  
-			settextstyle(&q);						// ÉèÖÃ×ÖÌåÑùÊ½
+			gettextstyle(&q);						 // è·å–å½“å‰å­—ä½“è®¾ç½®
+			q.lfHeight = 64;						 // è®¾ç½®å­—ä½“é«˜åº¦ä¸º 24
+			_tcscpy_s(q.lfFaceName, _T("é»‘ä½“"));	// è®¾ç½®å­—ä½“ä¸ºâ€œè‰ä¹¦â€(é«˜ç‰ˆæœ¬ VC æ¨èä½¿ç”¨ _tcscpy_s å‡½æ•°)
+			q.lfQuality = ANTIALIASED_QUALITY;		// è®¾ç½®è¾“å‡ºæ•ˆæœä¸ºæŠ—é”¯é½¿  
+			settextstyle(&q);						// è®¾ç½®å­—ä½“æ ·å¼
 			setbkmode(0);
-			TCHAR baoliu[] = _T("Çë°´ÈÎÒâ¼ü¼ÌĞø...");
+			TCHAR baoliu[] = _T("è¯·æŒ‰ä»»æ„é”®ç»§ç»­...");
 			outtextxy(170, 400, baoliu);
 			getchar();
-			FlushMouseMsgBuffer();//Çå¿ÕÊó±êÏûÏ¢»º³åÇø
+			FlushMouseMsgBuffer();//æ¸…ç©ºé¼ æ ‡æ¶ˆæ¯ç¼“å†²åŒº
 		}
 		cleardevice();
 	} while (1);
@@ -67,7 +67,7 @@ VOID Initbefore()
 	loadimage(&Background9, TEXT("res/Background9.jpg"), WINDOW_WIDTH, WINDOW_HEIGHT);
 	loadimage(&Background10, TEXT("res/Backgroun10.jpg"), WINDOW_WIDTH, WINDOW_HEIGHT);
 }
-//ÓÎÏ·³õÊ¼»¯º¯Êı
+//æ¸¸æˆåˆå§‹åŒ–å‡½æ•°
 VOID GameInit()
 {
 	putimage(0, 0, &Background6);
@@ -109,14 +109,14 @@ VOID GameInit()
 	}
 	EndBatchDraw();
 
-	//Êä³öÓÒ²àËµÃ÷ÎÄ×Ö
+	//è¾“å‡ºå³ä¾§è¯´æ˜æ–‡å­—
 	settextcolor(dian);
 	LOGFONT f;
-	gettextstyle(&f);						 // »ñÈ¡µ±Ç°×ÖÌåÉèÖÃ
-	f.lfHeight = 24;						 // ÉèÖÃ×ÖÌå¸ß¶ÈÎª 24
-	_tcscpy_s(f.lfFaceName, _T("²İÊé"));	// ÉèÖÃ×ÖÌåÎª¡°²İÊé¡±(¸ß°æ±¾ VC ÍÆ¼öÊ¹ÓÃ _tcscpy_s º¯Êı)
-	f.lfQuality = ANTIALIASED_QUALITY;		// ÉèÖÃÊä³öĞ§¹ûÎª¿¹¾â³İ  
-	settextstyle(&f);						// ÉèÖÃ×ÖÌåÑùÊ½
+	gettextstyle(&f);						 // è·å–å½“å‰å­—ä½“è®¾ç½®
+	f.lfHeight = 24;						 // è®¾ç½®å­—ä½“é«˜åº¦ä¸º 24
+	_tcscpy_s(f.lfFaceName, _T("è‰ä¹¦"));	// è®¾ç½®å­—ä½“ä¸ºâ€œè‰ä¹¦â€(é«˜ç‰ˆæœ¬ VC æ¨èä½¿ç”¨ _tcscpy_s å‡½æ•°)
+	f.lfQuality = ANTIALIASED_QUALITY;		// è®¾ç½®è¾“å‡ºæ•ˆæœä¸ºæŠ—é”¯é½¿  
+	settextstyle(&f);						// è®¾ç½®å­—ä½“æ ·å¼
 	setbkmode(0);
 
 	outtextxy(850, 60, hei);
@@ -126,17 +126,17 @@ VOID GameInit()
 	outtextxy(850,630, qiege);
 	outtextxy(850, 670, qiebkp);
 
-	//ÖØÍæÓÎÏ·
+	//é‡ç©æ¸¸æˆ
 	settextcolor(hong);
 	outtextxy(850, 390, again);
 
-	//»ÚÆå
+	//æ‚”æ£‹
 	outtextxy(850, 470, huiqi);
 
-	//¸ãĞ¦
+	//æç¬‘
 	outtextxy(850, 550, gaoxiao);
 
-	//²½ÊıÏÔÊ¾
+	//æ­¥æ•°æ˜¾ç¤º
 	settextcolor(lv);
 	outtextxy(850, 210, heibu);
 	outtextxy(850, 240, baibu);
@@ -171,7 +171,7 @@ VOID MouseClick()
 				else if (Map[(msg.x - Leftjie - GeLength / 2) / GeLength + 1][(msg.y - UpDownjie - GeLength / 2) / GeLength + 1] == 1 || Map[(msg.x - Leftjie - GeLength / 2) / GeLength + 1][(msg.y - UpDownjie - GeLength / 2) / GeLength + 1] == 2)
 				{
 					hWnd = GetHWnd();
-					MessageBox(hWnd, L"ÕâÀïÓĞÆå×ÓÅ¶,ÇëÑ¡Ôñ±ğ´¦", L"Are you¶º±È£¿", MB_OK);
+					MessageBox(hWnd, L"è¿™é‡Œæœ‰æ£‹å­å“¦,è¯·é€‰æ‹©åˆ«å¤„", L"Are youé€—æ¯”ï¼Ÿ", MB_OK);
 				}
 			}
 			else if (msg.x<100 && msg.y > 60)
@@ -195,7 +195,7 @@ VOID MouseClick()
 				else if (Map[(msg.x - Leftjie - GeLength / 2) / GeLength][(msg.y - UpDownjie - GeLength / 2) / GeLength + 1] == 1 || Map[(msg.x - Leftjie - GeLength / 2) / GeLength][(msg.y - UpDownjie - GeLength / 2) / GeLength + 1] == 2)
 				{
 					hWnd = GetHWnd();
-					MessageBox(hWnd, L"ÕâÀïÓĞÆå×ÓÅ¶,ÇëÑ¡Ôñ±ğ´¦", L"Are you¶º±È£¿", MB_OK);
+					MessageBox(hWnd, L"è¿™é‡Œæœ‰æ£‹å­å“¦,è¯·é€‰æ‹©åˆ«å¤„", L"Are youé€—æ¯”ï¼Ÿ", MB_OK);
 				}
 			}
 			else if (msg.x>100 && msg.y < 60)
@@ -219,7 +219,7 @@ VOID MouseClick()
 				else if (Map[(msg.x - Leftjie - GeLength / 2) / GeLength + 1][(msg.y - UpDownjie - GeLength / 2) / GeLength] == 1 || Map[(msg.x - Leftjie - GeLength / 2) / GeLength + 1][(msg.y - UpDownjie - GeLength / 2) / GeLength] == 2)
 				{
 					hWnd = GetHWnd();
-					MessageBox(hWnd, L"ÕâÀïÓĞÆå×ÓÅ¶,ÇëÑ¡Ôñ±ğ´¦", L"Are you¶º±È£¿", MB_OK);
+					MessageBox(hWnd, L"è¿™é‡Œæœ‰æ£‹å­å“¦,è¯·é€‰æ‹©åˆ«å¤„", L"Are youé€—æ¯”ï¼Ÿ", MB_OK);
 				}
 			}
 			else if (msg.x<100 && msg.y < 60)
@@ -243,7 +243,7 @@ VOID MouseClick()
 				else if (Map[(msg.x - Leftjie - GeLength / 2) / GeLength][(msg.y - UpDownjie - GeLength / 2) / GeLength] == 1 || Map[(msg.x - Leftjie - GeLength / 2) / GeLength][(msg.y - UpDownjie - GeLength / 2) / GeLength] == 2)
 				{
 					hWnd = GetHWnd();
-					MessageBox(hWnd, L"ÕâÀïÓĞÆå×ÓÅ¶£¬ÇëÑ¡Ôñ±ğ´¦", L"Are you¶º±È£¿", MB_OK);
+					MessageBox(hWnd, L"è¿™é‡Œæœ‰æ£‹å­å“¦ï¼Œè¯·é€‰æ‹©åˆ«å¤„", L"Are youé€—æ¯”ï¼Ÿ", MB_OK);
 				}
 			}
 		}
@@ -257,13 +257,13 @@ VOID MouseClick()
 			}
 		else {
 				hWnd = GetHWnd();
-				MessageBox(hWnd, L"°¡£¿Ê²Ã´£¿ÄãÒÑ¾­»Úµ½Í·ÁËÄØ£¡", L"ÄãÊÇºï×ÓÂğ£¿", MB_OK);
+				MessageBox(hWnd, L"å•Šï¼Ÿä»€ä¹ˆï¼Ÿä½ å·²ç»æ‚”åˆ°å¤´äº†å‘¢ï¼", L"ä½ æ˜¯çŒ´å­å—ï¼Ÿ", MB_OK);
 			}
 		}
 		else if (msg.x >= 845 && msg.y >= 530 && msg.y <= 570)
 		{
 			hWnd = GetHWnd();
-			MessageBox(hWnd, L"Å«æ¾½ôÕÅÖÆ×÷ÖĞ£¬Çë±İÏÂÄÍĞÄµÈ´ı£¡", L"ÆäÊµÎÒ²»»áĞ´Õâ¸ö......", MB_OK);
+			MessageBox(hWnd, L"å¥´å©¢ç´§å¼ åˆ¶ä½œä¸­ï¼Œè¯·é™›ä¸‹è€å¿ƒç­‰å¾…ï¼", L"å…¶å®æˆ‘ä¸ä¼šå†™è¿™ä¸ª......", MB_OK);
 		}
 		else if (msg.x >= 845 && msg.y >= 610 && msg.y <= 650)
 		{
@@ -287,7 +287,7 @@ VOID PlayGame()
 	//if (Map[X][Y] == 0)
 	solidcircle(drawX, drawY, 19);
 
-	//¼Æ²½
+	//è®¡æ­¥
 	setcolor(RGB(255, 255, 255));
 	setbkmode(OPAQUE);
 	heibuS[1] = (int)(cnt - 0.001) / 2 + 1;
@@ -298,7 +298,7 @@ VOID PlayGame()
 	_stprintf_s(baibuS, _T("%d"), baibuS[1]);
 	outtextxy(948, 240, baibuS);
 
-	//ÂÖµ½Íæ¼ÒÏÔÊ¾
+	//è½®åˆ°ç©å®¶æ˜¾ç¤º
 	if (cnt % 2) {
 		wanjia[1] = 2;
 	}
@@ -310,7 +310,7 @@ VOID PlayGame()
 
 VOID Judge()
 {
-	//ºÚÆåÓ®
+	//é»‘æ£‹èµ¢
 	if (
 		(Map[X][Y] == 1 && Map[X + 1][Y] == 1 && Map[X + 2][Y] == 1 && Map[X + 3][Y] == 1 && Map[X + 4][Y] == 1) ||
 		(Map[X - 1][Y] == 1 && Map[X][Y] == 1 && Map[X + 1][Y] == 1 && Map[X + 2][Y] == 1 && Map[X + 3][Y] == 1) ||
@@ -335,7 +335,7 @@ VOID Judge()
 		)
 		flag = 1;
 
-	//°×ÆåÓ®
+	//ç™½æ£‹èµ¢
 	if (
 		(Map[X][Y] == 2 && Map[X + 1][Y] == 2 && Map[X + 2][Y] == 2 && Map[X + 3][Y] == 2 && Map[X + 4][Y] == 2) ||
 		(Map[X - 1][Y] == 2 && Map[X][Y] == 2 && Map[X + 1][Y] == 2 && Map[X + 2][Y] == 2 && Map[X + 3][Y] == 2) ||
@@ -361,16 +361,16 @@ VOID Judge()
 		flag = 2;
 	if (flag == 1) {
 		hWnd = GetHWnd();
-		MessageBox(hWnd, L"ºÚÆåÊ¤", L"¹§Ï²£¡", MB_OK);
+		MessageBox(hWnd, L"é»‘æ£‹èƒœ", L"æ­å–œï¼", MB_OK);
 	}
 	else if (flag == 2)
 	{
 		hWnd = GetHWnd();
-		MessageBox(hWnd, L"·ÛÆåÊ¤", L"¹§Ï²£¡", MB_OK);
+		MessageBox(hWnd, L"ç²‰æ£‹èƒœ", L"æ­å–œï¼", MB_OK);
 	}
 }
 
-//»ÚÆå
+//æ‚”æ£‹
 VOID Back()
 {
 	//cleardevice();
@@ -395,7 +395,7 @@ VOID Back()
 			solidcircle(drawX, drawY, 19);
 		}
 	}
-	//¼Æ²½
+	//è®¡æ­¥
 	setcolor(RGB(255, 255, 255));
 	setbkmode(OPAQUE);
 	if (cnt == 0)
@@ -410,7 +410,7 @@ VOID Back()
 	_stprintf_s(baibuS, _T("%d"), baibuS[1]);
 	outtextxy(948, 240, baibuS);
 
-	//ÂÖµ½Íæ¼ÒÏÔÊ¾
+	//è½®åˆ°ç©å®¶æ˜¾ç¤º
 	if (cnt % 2) {
 		wanjia[1] = 2;
 	}
@@ -431,13 +431,13 @@ VOID ChangeSong()
 		PlaySound(L"res/flower dance.wav", NULL, SND_LOOP | SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
 		break;
 	case 3:
-		PlaySound(L"res/´¿ÒôÀÖ - Ò»Ê×ºÃÌıµÄ¹ÅóİÇú.wav", NULL, SND_LOOP | SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
+		PlaySound(L"res/çº¯éŸ³ä¹ - ä¸€é¦–å¥½å¬çš„å¤ç­æ›².wav", NULL, SND_LOOP | SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
 		break;
 	case 4:
-		PlaySound(L"res/ÀÖÕıç±  ÂåÌìÒÀ - É¨À×2.0.wav", NULL, SND_LOOP | SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
+		PlaySound(L"res/ä¹æ­£ç»«  æ´›å¤©ä¾ - æ‰«é›·2.0.wav", NULL, SND_LOOP | SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
 		break;
 	case 5:
-		PlaySound(L"res/Á¹Á¹.wav", NULL, SND_LOOP | SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
+		PlaySound(L"res/å‡‰å‡‰.wav", NULL, SND_LOOP | SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
 		break;
 	}
 }
@@ -518,14 +518,14 @@ VOID ChangePictures()
 	}
 	EndBatchDraw();
 
-	//Êä³öÓÒ²àËµÃ÷ÎÄ×Ö
+	//è¾“å‡ºå³ä¾§è¯´æ˜æ–‡å­—
 	settextcolor(dian);
 	LOGFONT f;
-	gettextstyle(&f);						 // »ñÈ¡µ±Ç°×ÖÌåÉèÖÃ
-	f.lfHeight = 24;						 // ÉèÖÃ×ÖÌå¸ß¶ÈÎª 24
-	_tcscpy_s(f.lfFaceName, _T("²İÊé"));	// ÉèÖÃ×ÖÌåÎª¡°²İÊé¡±(¸ß°æ±¾ VC ÍÆ¼öÊ¹ÓÃ _tcscpy_s º¯Êı)
-	f.lfQuality = ANTIALIASED_QUALITY;		// ÉèÖÃÊä³öĞ§¹ûÎª¿¹¾â³İ  
-	settextstyle(&f);						// ÉèÖÃ×ÖÌåÑùÊ½
+	gettextstyle(&f);						 // è·å–å½“å‰å­—ä½“è®¾ç½®
+	f.lfHeight = 24;						 // è®¾ç½®å­—ä½“é«˜åº¦ä¸º 24
+	_tcscpy_s(f.lfFaceName, _T("è‰ä¹¦"));	// è®¾ç½®å­—ä½“ä¸ºâ€œè‰ä¹¦â€(é«˜ç‰ˆæœ¬ VC æ¨èä½¿ç”¨ _tcscpy_s å‡½æ•°)
+	f.lfQuality = ANTIALIASED_QUALITY;		// è®¾ç½®è¾“å‡ºæ•ˆæœä¸ºæŠ—é”¯é½¿  
+	settextstyle(&f);						// è®¾ç½®å­—ä½“æ ·å¼
 	setbkmode(0);
 
 	outtextxy(850, 60, hei);
@@ -535,21 +535,21 @@ VOID ChangePictures()
 	outtextxy(850, 630, qiege);
 	outtextxy(850, 670, qiebkp);
 
-	//ÖØÍæÓÎÏ·
+	//é‡ç©æ¸¸æˆ
 	settextcolor(hong);
 	outtextxy(850, 390, again);
 
-	//»ÚÆå
+	//æ‚”æ£‹
 	outtextxy(850, 470, huiqi);
 
-	//¸ãĞ¦
+	//æç¬‘
 	outtextxy(850, 550, gaoxiao);
 
-	//²½ÊıÏÔÊ¾
+	//æ­¥æ•°æ˜¾ç¤º
 	settextcolor(lv);
 	outtextxy(850, 210, heibu);
 	outtextxy(850, 240, baibu);
-	//¼Æ²½
+	//è®¡æ­¥
 	setcolor(RGB(255, 255, 255));
 	setbkmode(OPAQUE);
 	if (cnt == 0)
@@ -565,7 +565,7 @@ VOID ChangePictures()
 	_stprintf_s(baibuS, _T("%d"), baibuS[1]);
 	outtextxy(948, 240, baibuS);
 
-	//ÂÖµ½Íæ¼ÒÏÔÊ¾
+	//è½®åˆ°ç©å®¶æ˜¾ç¤º
 	if (cnt % 2) {
 		wanjia[1] = 2;
 	}
